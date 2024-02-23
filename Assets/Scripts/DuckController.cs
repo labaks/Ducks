@@ -9,15 +9,21 @@ public class DuckController : MonoBehaviour
 
     public ParticleSystem featherExplode;
     public GameObject effectsHolder;
+    public int duckType;
+    public String duckName;
     public float moveSpeed = 2f, duckPrice = 1f;
     public float directionX, directionY;
     public float minDir = -1f, maxDir = 1f;
     public int duckOffset = 20, groundOffset = 100, cloudsOffset = 60;
+    PlayerStats stats;
 
     void Awake()
     {
         camera = Camera.main;
         effectsHolder = transform.parent.parent.Find("EffectsHolder").gameObject;
+        stats = gameController.GetComponent<PlayerStats>();
+        duckName = DuckLibrary.ducksNames[duckType];
+        duckPrice = DuckLibrary.Duck_Prices[duckType, stats.duckLevels[duckType]];
     }
     void Start()
     {

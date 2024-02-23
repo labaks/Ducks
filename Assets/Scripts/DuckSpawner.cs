@@ -27,6 +27,7 @@ public class DuckSpawner : MonoBehaviour
             {
                 GameObject newDuck = Instantiate(duckPrefab, RandomPosition(), Quaternion.identity, ducksHolder.transform);
                 newDuck.GetComponent<DuckController>().gameController = gameController;
+                newDuck.GetComponent<DuckController>().duckType = 0;
             }
         }
     }

@@ -13,9 +13,12 @@ public class GameController : MonoBehaviour
 
     public GameObject ducksSpawner;
 
+    PlayerStats stats;
+
     void Awake()
     {
         gameOverPanel.SetActive(false);
+        stats = GetComponent<PlayerStats>();
     }
     void Start()
     {
@@ -24,7 +27,7 @@ public class GameController : MonoBehaviour
     }
     void Update()
     {
-        coinsCounterText.text = coinsCounter.ToString();
+        coinsCounterText.text = stats.moneyCount.ToString();
         Timer();
         if (gameOver)
         {
@@ -64,6 +67,7 @@ public class GameController : MonoBehaviour
     {
         ducksCounter++;
         coinsCounter += duckPrice;
+        stats.moneyCount += duckPrice;
     }
 
     void DisplayGameOverPanel()
@@ -71,6 +75,7 @@ public class GameController : MonoBehaviour
         gameOverPanel.SetActive(true);
         ducksCount_gop.text = ducksCounter.ToString();
         coinsCount_gop.text = coinsCounter.ToString();
+        stats.SaveMoney();
     }
 
     public void Restart()
@@ -79,6 +84,8 @@ public class GameController : MonoBehaviour
         gameOverPanel.SetActive(false);
         timeRemaining = defaultTime;
         timerIsRunning = true;
+        coinsCounter = 0f;
+        ducksCounter = 0;
         StartCoroutine(ducksSpawner.GetComponent<DuckSpawner>().spawnDuck());
     }
 
