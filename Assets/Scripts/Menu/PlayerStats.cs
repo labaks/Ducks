@@ -5,10 +5,11 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public float moneyCount;
-    public int[] duckLevels = { 0, 0, 0, 0, 0 };
+    public int[] duckLevels;
 
     void Start()
     {
+        duckLevels = new int[5];
         if (!PlayerPrefs.HasKey("Money"))
         {
             CreatePlayerProfile();

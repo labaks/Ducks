@@ -55,6 +55,7 @@ public class DuckPanelController : MonoBehaviour
             stats.moneyCount -= Ordinary_Duck_LVL_Prices[ordinaryDuckLvl + 1];
             ordinaryDuckLvl++;
             SetDucksPanelsStats();
+            SaveDucksLevels();
             stats.SaveMoney();
             MoneyCount.text = stats.moneyCount.ToString();
         }

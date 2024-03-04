@@ -68,6 +68,8 @@ public class GameController : MonoBehaviour
         ducksCounter++;
         coinsCounter += duckPrice;
         stats.moneyCount += duckPrice;
+        float money = Mathf.Round(stats.moneyCount * 10.0f) * 0.1f;
+        stats.moneyCount = money;
     }
 
     void DisplayGameOverPanel()

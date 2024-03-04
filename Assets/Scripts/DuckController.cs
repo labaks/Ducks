@@ -21,12 +21,12 @@ public class DuckController : MonoBehaviour
     {
         camera = Camera.main;
         effectsHolder = transform.parent.parent.Find("EffectsHolder").gameObject;
-        stats = gameController.GetComponent<PlayerStats>();
-        duckName = DuckLibrary.ducksNames[duckType];
-        duckPrice = DuckLibrary.Duck_Prices[duckType, stats.duckLevels[duckType]];
     }
     void Start()
     {
+        stats = gameController.GetComponent<PlayerStats>();
+        duckName = DuckLibrary.ducksNames[duckType];
+        duckPrice = DuckLibrary.Duck_Prices[duckType, stats.duckLevels[duckType]];
         directionX = RandomDirection();
         directionY = RandomDirection();
         if (directionX > 0) FlipDuck();
