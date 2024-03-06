@@ -7,55 +7,55 @@ public class DuckPanelController : MonoBehaviour
 {
     public GameObject MenuController;
     public Text MoneyCount;
-    public GameObject OrdinaryDuckPanel;
-    private float[] Ordinary_Duck_LVL_Prices = { 0f, 50f, 85f, 144.5f, 245.6f, 417.6f, 709.9f, 1206.8f, 2051.7f, 3487.9f, 5929.4f };
-    private float[] Ordinary_Duck_Prices = { 1f, 1.1f, 1.2f, 1.3f, 1.4f, 1.5f, 1.6f, 1.7f, 1.8f, 1.9f, 2f };
-    public int ordinaryDuckLvl;
+    public GameObject DuckPanelList;
+    public GameObject DuckPanelPrefab;
     PlayerStats stats;
     void Start()
     {
         stats = MenuController.GetComponent<PlayerStats>();
         MoneyCount.text = stats.moneyCount.ToString();
-        GetDucksLevels();
+        InitDuckPanelList();
         SetDucksPanelsStats();
     }
 
-    void GetDucksLevels()
+    void InitDuckPanelList()
     {
-        if (!PlayerPrefs.HasKey("OrdinaryDuck"))
+        for (int i = 0; i < stats.duckLevels.Length; i++)
         {
-            PlayerPrefs.SetInt("OrdinaryDuck", 0);
+            int panelNumber = i;
+            GameObject newPanel = Instantiate(DuckPanelPrefab, DuckPanelList.transform);
+            newPanel.transform.Find("DuckName").GetComponent<Text>().text = DuckLibrary.ducksNames[panelNumber];
+            newPanel.transform.Find("InfoPanel/UbgradePriceBtn").GetComponent<Button>().onClick.AddListener(delegate { UpDuckLvl(panelNumber); });
         }
-        ordinaryDuckLvl = PlayerPrefs.GetInt("OrdinaryDuck");
-    }
-
-    void SaveDucksLevels() {
-        PlayerPrefs.SetInt("OrdinaryDuck", ordinaryDuckLvl);
     }
 
     void SetDucksPanelsStats()
     {
-        OrdinaryDuckPanel.transform.Find("InfoPanel/CurrentPrice").GetComponent<Text>().text = Ordinary_Duck_Prices[ordinaryDuckLvl].ToString();
-        if (ordinaryDuckLvl < Ordinary_Duck_LVL_Prices.Length)
+        for (int i = 0; i < DuckPanelList.transform.childCount; i++)
         {
-            OrdinaryDuckPanel.transform.Find("InfoPanel/UbgradePriceBtn/Text").GetComponent<Text>().text = Ordinary_Duck_LVL_Prices[ordinaryDuckLvl + 1].ToString();
-            OrdinaryDuckPanel.transform.Find("InfoPanel/NextPrice").GetComponent<Text>().text = Ordinary_Duck_Prices[ordinaryDuckLvl + 1].ToString();
-        }
-        else
-        {
-            OrdinaryDuckPanel.transform.Find("InfoPanel/UbgradePriceBtn").gameObject.SetActive(false);
-            OrdinaryDuckPanel.transform.Find("InfoPanel/NextPrice").gameObject.SetActive(false);
+            DuckPanelList.transform.GetChild(i).transform.Find("InfoPanel/CurrentPrice").GetComponent<Text>().text = DuckLibrary.Duck_Prices[i, stats.duckLevels[i]].ToString();
+            DuckPanelList.transform.GetChild(i).transform.Find("InfoPanel/DuckLevel").GetComponent<Text>().text = stats.duckLevels[i].ToString();
+            if (stats.duckLevels[i] < DuckLibrary.Duck_LVL_Prices.GetLength(1))
+            {
+                DuckPanelList.transform.GetChild(i).transform.Find("InfoPanel/UbgradePriceBtn/Text").GetComponent<Text>().text = DuckLibrary.Duck_LVL_Prices[i, stats.duckLevels[i] + 1].ToString();
+                DuckPanelList.transform.GetChild(i).transform.Find("InfoPanel/NextPrice").GetComponent<Text>().text = DuckLibrary.Duck_Prices[i, stats.duckLevels[i] + 1].ToString();
+            }
+            else
+            {
+                DuckPanelList.transform.GetChild(i).transform.Find("InfoPanel/UbgradePriceBtn").gameObject.SetActive(false);
+                DuckPanelList.transform.GetChild(i).transform.Find("InfoPanel/NextPrice").gameObject.SetActive(false);
+            }
         }
     }
 
-    public void UpOrdinaryDuckLvl()
+    void UpDuckLvl(int panelNumber)
     {
-        if (stats.moneyCount >= Ordinary_Duck_LVL_Prices[ordinaryDuckLvl + 1])
+        if (stats.moneyCount >= DuckLibrary.Duck_LVL_Prices[panelNumber, stats.duckLevels[panelNumber] + 1])
         {
-            stats.moneyCount -= Ordinary_Duck_LVL_Prices[ordinaryDuckLvl + 1];
-            ordinaryDuckLvl++;
+            stats.moneyCount -= DuckLibrary.Duck_LVL_Prices[panelNumber, stats.duckLevels[panelNumber] + 1];
+            stats.duckLevels[panelNumber]++;
             SetDucksPanelsStats();
-            SaveDucksLevels();
+            stats.SaveDuckLevels();
             stats.SaveMoney();
             MoneyCount.text = stats.moneyCount.ToString();
         }
