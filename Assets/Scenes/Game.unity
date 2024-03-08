@@ -157,8 +157,6 @@ MonoBehaviour:
   duckOffset: 20
   groundOffset: 100
   ducksHolder: {fileID: 2052310628}
-  duckPrefab: {fileID: 5766879723053187647, guid: dbb9a4325945f414587a6c626ecb8496,
-    type: 3}
 --- !u!4 &30176574
 Transform:
   m_ObjectHideFlags: 0
@@ -625,6 +623,10 @@ MonoBehaviour:
   gameOver: 0
   ducksCounter: 0
   ducksSpawner: {fileID: 30176572}
+  duckPrefabs:
+  - {fileID: 5766879723053187647, guid: dbb9a4325945f414587a6c626ecb8496, type: 3}
+  - {fileID: 5766879723053187647, guid: 57bd2116d454b3648a22711ff04e61e2, type: 3}
+  - {fileID: 5766879723053187647, guid: 833f2729389065c4caaefc3317e26b9b, type: 3}
 --- !u!4 &573692486
 Transform:
   m_ObjectHideFlags: 0

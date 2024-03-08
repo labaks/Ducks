@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8265970817538110164}
   - component: {fileID: 7557626976383835427}
   m_Layer: 0
-  m_Name: Duck
+  m_Name: 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,7 +122,10 @@ MonoBehaviour:
   featherExplode: {fileID: 4307857851361670251, guid: 196f13e208ab2624e99b05891b195b97,
     type: 3}
   effectsHolder: {fileID: 0}
+  duckType: 0
+  duckName: 
   moveSpeed: 12
+  duckPrice: 1
   directionX: 0
   directionY: 0
   minDir: -1

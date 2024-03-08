@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public int ducksCounter = 0;
 
     public GameObject ducksSpawner;
+    public GameObject[] duckPrefabs;
 
     PlayerStats stats;
 

@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bird2_3
+  m_Name: 03. Golden Duck
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,37 +20,53 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -5373470260775809519, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: -5373470260775809519, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.03125
-      value: {fileID: 511717896204855434, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: 511717896204855434, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.0625
-      value: {fileID: -6754678263728319518, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: -6754678263728319518, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.09375
-      value: {fileID: -4765006771491179406, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: -4765006771491179406, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.125
-      value: {fileID: 4728839922131665744, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: 4728839922131665744, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.15625
-      value: {fileID: 8880521758847290906, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: 8880521758847290906, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.1875
-      value: {fileID: 1519129008736223078, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: 1519129008736223078, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.21875
-      value: {fileID: 1762691536374545750, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: 1762691536374545750, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.25
-      value: {fileID: 7032085255234384716, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: 7032085255234384716, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.28125
-      value: {fileID: 8649067573174565340, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: 8649067573174565340, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.3125
-      value: {fileID: 5603691790548323820, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: 5603691790548323820, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.34375
-      value: {fileID: -8647965033169763979, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: -8647965033169763979, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.375
-      value: {fileID: 5658959601985403538, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: 5658959601985403538, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.40625
-      value: {fileID: 293657231149128635, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: 293657231149128635, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.4375
-      value: {fileID: -695931814205744645, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: -695931814205744645, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     - time: 0.46875
-      value: {fileID: -5771383202925512026, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
+      value: {fileID: -5771383202925512026, guid: 0f833f5ead5bb394ca07e119788473d3,
+        type: 3}
     attribute: m_Sprite
     path: 
     classID: 212

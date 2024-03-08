@@ -25,11 +25,11 @@ public class PlayerStats : MonoBehaviour
         {
             if (i == duckLevels.Length - 1)
             {
-                strLevels += "0";
+                strLevels += "-1";
             }
             else
             {
-                strLevels += "0,";
+                strLevels += "-1,";
             }
         }
         PlayerPrefs.SetString("DuckLevels", strLevels);
