@@ -3208,6 +3208,10 @@ MonoBehaviour:
   DuckPanelList: {fileID: 934558040}
   DuckPanelPrefab: {fileID: 472612146046058392, guid: 6c68f7ad94404d3429096a64ca60bf0d,
     type: 3}
+  duckImages:
+  - {fileID: -8342180980945000597, guid: 336f8a448b26ec2488456871d161fbaf, type: 3}
+  - {fileID: 5543627424026925790, guid: b19fbaf0c14bbf041bfa6a63f785294f, type: 3}
+  - {fileID: -5373470260775809519, guid: 0f833f5ead5bb394ca07e119788473d3, type: 3}
 --- !u!1 &1980973823
 GameObject:
   m_ObjectHideFlags: 0
