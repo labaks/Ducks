@@ -26,7 +26,14 @@ public class DuckController : MonoBehaviour
     {
         stats = gameController.GetComponent<PlayerStats>();
         duckName = DuckLibrary.ducksNames[duckType];
-        duckPrice = DuckLibrary.Duck_Prices[duckType, stats.duckLevels[duckType]];
+        if (stats.duckLevels[duckType] == -1)
+        {
+            duckPrice = DuckLibrary.Duck_Prices[duckType, 0];
+        }
+        else
+        {
+            duckPrice = DuckLibrary.Duck_Prices[duckType, stats.duckLevels[duckType]];
+        }
         directionX = RandomDirection();
         directionY = RandomDirection();
         if (directionX > 0) FlipDuck();

@@ -41,7 +41,7 @@ public class DuckPanelController : MonoBehaviour
                 DuckPanelList.transform.GetChild(i).transform.Find("InfoPanel/OpenPanel").gameObject.SetActive(true);
                 DuckPanelList.transform.GetChild(i).transform.Find("InfoPanel/OpenPanel/OpenBtn/OpenPrice").GetComponent<Text>().text = DuckLibrary.Duck_LVL_Prices[i, 0].ToString();
                 int panelNumber = i;
-                DuckPanelList.transform.GetChild(i).transform.Find("InfoPanel/OpenPanel/OpenBtn").GetComponent<Button>().onClick.AddListener(delegate { OpenDuck(panelNumber); });
+                DuckPanelList.transform.GetChild(i).transform.Find("InfoPanel/OpenPanel/OpenBtn").GetComponent<Button>().onClick.AddListener(delegate { UpDuckLvl(panelNumber); });
             }
             else
             {
